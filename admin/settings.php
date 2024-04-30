@@ -379,29 +379,28 @@ adminLogin();
             for (let i = 0; i < index.length; i++) {
                 data_str += index[i] + "=" + document.getElementById(contact_inp_id[1]).value + "&";   
             }
-            console.log(data_str);
 
+            data_str += "upd_contacts";
 
-            // let xhr = new XMLHttpRequest;
+            let xhr = new XMLHttpRequest;
+            xhr.open("POST", "ajax/settings_crud.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
 
-            // xhr.open("POST", "ajax/settings_crud.php", true);
-            // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onload = function () {
 
-            // xhr.onload = function () {
+                // var myModal_contacts = document.getElementById("contacts-s");
+                // var modal_contacts = bootstrap.Modal.getInstance(myModal_contacts);
+                // modal_contacts.hide();
 
-            //     var myModal = document.getElementById("general-s");
-            //     var modal = bootstrap.Modal.getInstance(myModal);
-            //     modal.hide();
+                if (this.responseText == 1) {
+                    alert("success", "Changes saved!");
+                    get_contacts();
+                } else {
+                    alert("Error", "No Changes made!");
+                }
+            }
 
-            //     if (this.responseText == 1) {
-            //         alert("success", "Changes saved!");
-            //         get_general();
-            //     } else {
-            //         alert("Error", "No Changes made!");
-            //     }
-            // }
-
-            // xhr.send('site_title=' + site_title_val + '&site_about=' + site_about_value + '&upd_general');
+            xhr.send(data_str);
         }
 
 
