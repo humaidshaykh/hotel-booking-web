@@ -337,7 +337,7 @@ adminLogin();
 
             xhr.onload = function () {
                 contacts_data = JSON.parse(this.responseText);
-                console.log(contacts_data);
+                // console.log(contacts_data);
                 contacts_data = Object.values(contacts_data);
                 // console.log(contacts_data);
 
