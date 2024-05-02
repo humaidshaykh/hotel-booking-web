@@ -23,7 +23,7 @@ adminLogin();
                 <div class="card border-0 shadow-sm mb-4">
                     <div class="card-body">
                         <div class="d-flex align-items-center justify-content-between mb-3">
-                            <h5 class="card-title text-body-secondary m-0">Card title</h5>
+                            <h5 class="card-title text-body-secondary m-0">General Setting</h5>
                             <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
                                 data-bs-target="#general-s">
                                 <i class="ri-file-edit-line me-2"></i>Edit
@@ -233,6 +233,50 @@ adminLogin();
                     </div>
                 </div>
 
+                <!-- Management team section -->
+                <div class="card border-0 shadow-sm mb-4">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <h5 class="card-title text-body-secondary m-0">Management Team</h5>
+                            <button type="button" class="btn btn-dark shadow-none btn-sm" data-bs-toggle="modal"
+                                data-bs-target="#team-s">
+                                <i class="ri-add-box-line me-2"></i>Add
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Management team modal -->
+                <div class="modal fade" id="team-s" data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <form id="team_s_form">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Add Team Member</h5>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="mb-3">
+                                        <label class="form-label">Name</label>
+                                        <input type="text" name="member_name" id="member_name_inp"
+                                            class="form-control shadow-none" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Picture</label>
+                                        <input type="file" name="member_picture" id="member_picture_inp"
+                                            accept=".jpg, .png, .webp, .jpeg" class="form-control shadow-none" required>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                                        onclick="">Cancel</button>
+                                    <button type="submit" class="btn custom-bg text-white shadow-none">Save</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
 
             </div>
         </div>
@@ -248,6 +292,10 @@ adminLogin();
         let site_about_inp = document.getElementById("site_about_inp");
 
         let conatacts_s_form = document.getElementById("conatacts_s_form");
+
+        let team_s_form = document.getElementById("team_s_form");
+        let member_name_inp = document.getElementById("member_name_inp");
+        let member_picture_inp = document.getElementById("member_picture_inp");
 
         function get_general() {
             let site_title = document.getElementById("site_title");
@@ -404,7 +452,14 @@ adminLogin();
             xhr.send(data_str);
         }
 
+        team_s_form.addEventListener('submit', function(e){
+            e.preventDefault();
+            add_member();
+        })
 
+        function add_member(){
+            
+        }
 
         window.onload = function () {
             get_general();
