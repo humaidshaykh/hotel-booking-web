@@ -51,7 +51,7 @@ if(isset($_POST["upd_contacts"])){
 
     $q = "UPDATE `contact_details` SET `address`=?,`gmap`=?,`pn1`=?,`pn2`=?,`email`=?,`fb`=?,`insta`=?,`tw`=?,`iframe`=? WHERE `sr_no`=?";
 
-    $values = [$frm_data['address'], $frm_data['gmap'], $frm_data['pn1'], $frm_data['pn2'], $frm_data['email'], $frm_data['fb'], $frm_data['insta'], $frm_data['tw'], $frm_data['iframe'],1];
+    $values = [$frm_data['address'], $frm_data['gmap'], $frm_data['ph1'], $frm_data['ph2'], $frm_data['email'], $frm_data['fb'], $frm_data['insta'], $frm_data['tw'], $frm_data['iframe'],1];
 
     $res = update($q,$values,"sssssssssi");
     echo $res;

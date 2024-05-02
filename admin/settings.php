@@ -246,7 +246,7 @@ adminLogin();
         let general_s_form = document.getElementById("general_s_form");
         let site_title_inp = document.getElementById("site_title_inp");
         let site_about_inp = document.getElementById("site_about_inp");
-        
+
         let conatacts_s_form = document.getElementById("conatacts_s_form");
 
         function get_general() {
@@ -377,8 +377,9 @@ adminLogin();
             let data_str = "";
 
             for (let i = 0; i < index.length; i++) {
-                data_str += index[i] + "=" + document.getElementById(contact_inp_id[1]).value + "&";   
+                data_str += index[i] + "=" + document.getElementById(contact_inp_id[i]).value + "&";
             }
+
 
             data_str += "upd_contacts";
 
@@ -388,9 +389,9 @@ adminLogin();
 
             xhr.onload = function () {
 
-                // var myModal_contacts = document.getElementById("contacts-s");
-                // var modal_contacts = bootstrap.Modal.getInstance(myModal_contacts);
-                // modal_contacts.hide();
+                var myModal_contacts = document.getElementById("contacts-s");
+                var modal_contacts = bootstrap.Modal.getInstance(myModal_contacts);
+                modal_contacts.hide();
 
                 if (this.responseText == 1) {
                     alert("success", "Changes saved!");
