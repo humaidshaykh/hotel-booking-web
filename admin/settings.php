@@ -107,11 +107,11 @@ adminLogin();
                                     <h6 class="card-subtitle mb-2 fw-bold">Phone Numbers</h6>
                                     <p class="card-text mb-1">
                                         <i class="ri-phone-line"></i>
-                                        <span id="pn1"></span>
+                                        <span id="ph1"></span>
                                     </p>
                                     <p class="card-text">
                                         <i class="ri-phone-line"></i>
-                                        <span id="pn2"></span>
+                                        <span id="ph2"></span>
                                     </p>
                                 </div>
                                 <div class="mb-4">
@@ -329,7 +329,7 @@ adminLogin();
 
         function get_contacts() {
 
-            let contact_p_id = ['address', 'gmap', 'pn1', 'pn2', 'email', 'fb', 'insta', 'tw'];
+            let contact_p_id = ['address', 'gmap', 'ph1', 'ph2', 'email', 'fb', 'insta', 'tw'];
             let iframe = document.getElementById('iframe');
 
             let xhr = new XMLHttpRequest;
