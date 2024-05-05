@@ -458,7 +458,30 @@ adminLogin();
         })
 
         function add_member(){
-            
+            const data = new FormData();
+            data.append('name', member_name_inp.value);
+            data.append('picture', member_picture_inp.files[0]);
+            data.append('add_member', '');
+
+            let xhr = new XMLHttpRequest;
+            xhr.open("POST", "ajax/settings_crud.php", true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+            xhr.onload = function () {
+
+                // var myModal = document.getElementById("team-s");
+                // var modal = bootstrap.Modal.getInstance(myModal);
+                // modal.hide();
+
+                // if (this.responseText == 1) {
+                //     alert("success", "Changes saved!");
+                //     get_general();
+                // } else {
+                //     alert("Error", "No Changes made!");
+                // }
+            }
+
+            xhr.send(data);
         }
 
         window.onload = function () {

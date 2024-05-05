@@ -57,4 +57,10 @@ if(isset($_POST["upd_contacts"])){
     echo $res;
 }
 
+if(isset($_POST["add_member"])){
+    $frm_data = filteration($_POST);
+
+    uploadImage($_FILES['picture'] , ABOUT_FOLDER);
+}
+
 ?>
