@@ -482,6 +482,7 @@ adminLogin();
             }
 
             xhr.send(data);
+            
         }
 
         window.onload = function () {
