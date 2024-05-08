@@ -37,8 +37,17 @@ function uploadImage($image,$folder){
 
     if(!in_array($valid_mime,$img_mime)){
         return 'inv_img'; //invalid image mime or format
-    }else if{
-        
+    }else if(($image['size']/(1024*1024))>2){
+        return 'invalid_size'; // invalid file size is greather than 2MB
+    }else{
+        $ext = pathinfo($image['name'],PATHINFO_EXTENSION);
+        $rname = 'IMG_'.random_int(11111,99999).".$ext";
+        $img_path = UPLOAD_IMAGE_PATH.$folder.$rname;
+        if(move_uploaded_file($image['tmp_name'],$img_path)){
+            return $rname;
+        }else{
+            return 'upd_failed';
+        }
     }
 }
 
