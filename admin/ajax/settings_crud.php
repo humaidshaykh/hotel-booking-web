@@ -60,7 +60,17 @@ if(isset($_POST["upd_contacts"])){
 if(isset($_POST["add_member"])){
     $frm_data = filteration($_POST);
 
-    uploadImage($_FILES['picture'] , ABOUT_FOLDER);
+    $img_r = uploadImage($_FILES['picture'] , ABOUT_FOLDER);
+
+    if($img_r == "inv_img"){
+        echo $img_r;
+    }else if($img_r == "invalid_size"){
+        echo $img_r;
+    }else if($img_r == "upd_failed"){
+        echo $img;
+    }else{
+        
+    }
     
 }
 
