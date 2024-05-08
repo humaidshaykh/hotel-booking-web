@@ -32,7 +32,14 @@ function alert($type, $msg)
 }
 
 function uploadImage($image,$folder){
-    
+    $valid_mime = ['image/jpeg','image/png','image/webp'];
+    $img_mime = $image['type'];
+
+    if(!in_array($valid_mime,$img_mime)){
+        return 'inv_img'; //invalid image mime or format
+    }else if{
+        
+    }
 }
 
 ?>
