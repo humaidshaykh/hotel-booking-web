@@ -70,10 +70,10 @@ function insert($sql, $values, $datatypes)
             return $res;
         } else {
             mysqli_stmt_close($stmt);
-            die("Query cannot be executed - Update");
+            die("Query cannot be executed - Insert");
         }
     } else {
-        die("Query cannot be prepared - Update");
+        die("Query cannot be prepared - Insert");
     }
 }
 

@@ -69,7 +69,10 @@ if(isset($_POST["add_member"])){
     }else if($img_r == "upd_failed"){
         echo $img;
     }else{
-        
+        $q = "INSERT INTO `team_details`(`name`, `picture`) VALUES (?,?)";
+        $values = [$frm_data['name'],$img_r];
+        $res = insert($q,$values,'ss');
+        echo $res;
     }
     
 }
