@@ -69,7 +69,7 @@ if(isset($_POST["add_member"])){
     }else if($img_r == "upd_failed"){
         echo $img;
     }else{
-        return 'upd_failed';
+        
     }
     
 }
